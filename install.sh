@@ -3,9 +3,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 # Installs brew-cask
 brew tap caskroom/cask
-brew install brew-cask
 brew tap caskroom/versions
 brew tap caskroom/fonts
+brew tap homebrew/science
 
 # Install brew packages
 
@@ -13,9 +13,11 @@ brew_apps=(
   cmatrix
   gcc
   git
+  #mas
   nvm
   python3
   r
+  #reattach-to-user-namespace
   tmux
   zsh
 )
@@ -46,6 +48,15 @@ cask_fonts=(
 )
 
 brew cask install "${cask_fonts[@]}"
+
+# Install Mac app store apps - disabled until mas works better with tmux
+# mas_apps=(
+#   507257563 # Sip
+# )
+#
+# read -p "Enter your Apple ID: " apple_id
+# read -sp "Enter your password: " apple_password
+# mas signin $apple_id $apple_password
 
 npm_packages=(
   babel
@@ -89,7 +100,32 @@ apm install "${atom_packages[@]}"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 # Change default shell to zsh
-sudo -s
-echo $(which zsh) >> /etc/shells
-exit
-chsh -s $(which zsh)
+echo "Adding zsh to list of login shells."
+MAX_TRIES=4
+COUNT=0
+while [  $COUNT -lt $MAX_TRIES ]; do
+  sudo bash -c "echo $(which zsh) >> /etc/shells"
+  if [ $? -eq 0 ]; then
+    break
+  fi
+  let COUNT=COUNT+1
+done
+
+if [ $COUNT -eq $MAX_TRIES]; then
+  echo "Entered incorrect password too many times. Exiting."
+fi
+
+echo "Changing default shell to zsh."
+MAX_TRIES=4
+COUNT=0
+while [  $COUNT -lt $MAX_TRIES ]; do
+  chsh -s $(which zsh)
+  if [ $? -eq 0 ]; then
+    break
+  fi
+  let COUNT=COUNT+1
+done
+
+if [ $COUNT -eq $MAX_TRIES]; then
+  echo "Entered incorrect password too many times. Exiting."
+fi
