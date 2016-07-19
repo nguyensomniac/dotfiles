@@ -74,6 +74,7 @@ npm install -g "${npm_packages[@]}"
 pip_packages=(
   matplotlib
   pandas
+  powerline-status
 )
 
 pip3 install "${pip_packages[@]}"
@@ -111,7 +112,7 @@ while [  $COUNT -lt $MAX_TRIES ]; do
   let COUNT=COUNT+1
 done
 
-if [ $COUNT -eq $MAX_TRIES]; then
+if [ $COUNT -eq $MAX_TRIES ]; then
   echo "Entered incorrect password too many times. Exiting."
 fi
 
