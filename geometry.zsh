@@ -92,7 +92,11 @@ prompt_geometry_git_symbol() {
 
 prompt_geometry_git_info() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
-    echo "$(prompt_geometry_git_symbol)%F{242}$(prompt_geometry_git_branch)%{$reset_color%} :: $(prompt_geometry_git_time_since_commit) :: $(prompt_geometry_git_dirty)"
+    if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]];then
+      echo "$(prompt_geometry_git_symbol)%F{242}$(prompt_geometry_git_branch)%{$reset_color%} :: $(prompt_geometry_git_time_since_commit) :: $(prompt_geometry_git_dirty)"
+    else
+      echo "$(prompt_geometry_git_symbol)%F{242}$(prompt_geometry_git_branch)%{$reset_color%} :: $(prompt_geometry_git_dirty)"
+    fi
   fi
 }
 
@@ -126,6 +130,10 @@ prompt_geometry_setup() {
   add-zsh-hook preexec prompt_geometry_set_cmd_title
   add-zsh-hook precmd prompt_geometry_set_title
   add-zsh-hook precmd prompt_geometry_render
+  PROMPT='
+ %(?.$PROMPT_SYMBOL.$EXIT_VALUE_SYMBOL) %{$fg[blue]%}%3~%{$reset_color%} '
+  RPROMPT='$(_git_info)'
+  PROMPT2=' $RPROMPT_SYMBOL '
 }
 
 prompt_geometry_setup
