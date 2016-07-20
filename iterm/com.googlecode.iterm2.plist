@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>AppleScrollAnimationEnabled</key>
@@ -37336,9 +37338,9 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>269 139 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>268 213 1018 447 0 0 1440 900 </string>
+	<string>268 123 918 498 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>382 186 570 452 0 0 1440 900 </string>
+	<string>382 231 650 402 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_4E52300F-C6F0-4727-8926-AA497F0427FD</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_4E52300F-C6F0-4727-8926-AA497F0427FD_selection</key>
@@ -37970,6 +37972,8 @@
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
 			<integer>1000</integer>
+			<key>Scrollback With Status Bar</key>
+			<true/>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -38007,7 +38011,7 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
