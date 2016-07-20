@@ -15,5 +15,7 @@
     tabType: "soft"
   "exception-reporting":
     userId: "67773382-ca53-afd5-032f-6892db9c21cc"
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
