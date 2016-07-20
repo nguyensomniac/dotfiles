@@ -68,3 +68,6 @@ for i in ${FILES_TO_SYMLINK[@]}; do
         fi
 
 done
+
+# more symlinks
+ln -fs $(pwd)/.atom/config.cson $HOME/.atom/config.cson

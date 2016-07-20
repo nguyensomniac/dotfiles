@@ -1,0 +1,19 @@
+"*":
+  "base16-syntax":
+    scheme: "Atelier Cave"
+  core:
+    disabledPackages: [
+      "power-mode"
+    ]
+    themes: [
+      "spacegray-dark-ui"
+      "base16-syntax"
+    ]
+  editor:
+    fontFamily: "Input Sans"
+    fontSize: 11
+    tabType: "soft"
+  "exception-reporting":
+    userId: "67773382-ca53-afd5-032f-6892db9c21cc"
+  welcome:
+    showOnStartup: false
