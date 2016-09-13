@@ -37338,9 +37338,9 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>269 139 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>268 123 918 498 0 0 1440 900 </string>
+	<string>268 307 918 381 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>382 231 650 402 0 0 1440 900 </string>
+	<string>697 333 650 423 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_4E52300F-C6F0-4727-8926-AA497F0427FD</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_4E52300F-C6F0-4727-8926-AA497F0427FD_selection</key>
@@ -38091,6 +38091,10 @@
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
 	<string>3.0.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>

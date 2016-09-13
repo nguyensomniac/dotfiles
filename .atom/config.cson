@@ -1,21 +1,21 @@
 "*":
   "base16-syntax":
-    scheme: "Atelier Cave"
+    scheme: "Ashes"
   core:
     disabledPackages: [
       "power-mode"
     ]
     themes: [
-      "spacegray-dark-ui"
+      "spacegray-light-ui"
       "base16-syntax"
     ]
   editor:
     fontFamily: "Input Sans"
     fontSize: 11
+    lineHeight: 1.6
     tabType: "soft"
   "exception-reporting":
     userId: "67773382-ca53-afd5-032f-6892db9c21cc"
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   welcome:
     showOnStartup: false
