@@ -37337,10 +37337,12 @@
 	</dict>
 	<key>NSWindow Frame Preferences</key>
 	<string>269 139 606 456 0 0 1440 877 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 139 606 456 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>268 307 918 381 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>697 333 650 423 0 0 1440 900 </string>
+	<string>471 438 890 423 0 0 1440 900 </string>
 	<key>NeverWarnAboutShortLivedSessions_4E52300F-C6F0-4727-8926-AA497F0427FD</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_4E52300F-C6F0-4727-8926-AA497F0427FD_selection</key>
@@ -38088,6 +38090,8 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
