@@ -127,6 +127,6 @@ while [  $COUNT -lt $MAX_TRIES ]; do
   let COUNT=COUNT+1
 done
 
-if [ $COUNT -eq $MAX_TRIES]; then
+if [ $COUNT -eq $MAX_TRIES ]; then
   echo "Entered incorrect password too many times. Exiting."
 fi
