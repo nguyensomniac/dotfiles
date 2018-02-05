@@ -1,6 +1,0 @@
-[submodule "geometry"]
-	path = geometry
-	url = https://github.com/frmendes/geometry
-[submodule "plugins/geometry"]
-	path = plugins/geometry
-	url = https://github.com/frmendes/geometry

@@ -1,3 +1,5 @@
+SCRIPTPATH=$(cd "$(dirname "$1")"; pwd)/$(basename "$1")
+
 # Installs Homebrew. Ruby comes preinstalled on Macs
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -10,14 +12,6 @@ brew tap homebrew/science
 # Install brew packages
 
 brew_apps=(
-  cmatrix
-  gcc
-  git
-  #mas
-  nvm
-  python3
-  r
-  #reattach-to-user-namespace
   tmux
   zsh
 )
@@ -32,10 +26,7 @@ cask_apps=(
   firefox
   flux
   google-chrome
-  iterm2-beta
-  polymail
   sketch
-  slack
   spotify
 )
 
@@ -43,8 +34,6 @@ brew cask install "${cask_apps[@]}"
 
 cask_fonts=(
   font-input
-  font-karla
-  font-source-sans-pro
 )
 
 brew cask install "${cask_fonts[@]}"
@@ -57,27 +46,6 @@ brew cask install "${cask_fonts[@]}"
 # read -p "Enter your Apple ID: " apple_id
 # read -sp "Enter your password: " apple_password
 # mas signin $apple_id $apple_password
-
-npm_packages=(
-  babel
-  bower
-  coffee-script
-  gulp
-  react
-  redux
-  webpack
-  yo
-)
-
-npm install -g "${npm_packages[@]}"
-
-pip_packages=(
-  matplotlib
-  pandas
-  powerline-status
-)
-
-pip3 install "${pip_packages[@]}"
 
 atom_packages=(
   aesthetic-ui
@@ -130,3 +98,9 @@ done
 if [ $COUNT -eq $MAX_TRIES ]; then
   echo "Entered incorrect password too many times. Exiting."
 fi
+
+# install Antigen bundle manager for zsh
+echo "Installing Antigen to" $SCRIPTPATH
+mkdir $SCRIPTPATH/.antigen
+curl -L git.io/antigen > $SCRIPTPATH/.antigen/antigen.zsh
+ln -fs $SCRIPTPATH/.antigen ~/.antigen

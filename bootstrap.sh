@@ -1,7 +1,7 @@
 # Run this to symlink dotfiles to home folder.
 # Some code copied from Paul Irish's dotfiles: https://github.com/paulirish/dotfiles/blob/master/symlink-setup.sh
 
-declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
+declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .gitignore -not -name .osx | sed -e 's|//|/|' | sed -e 's|./.|.|')
 
 answer_is_yes() {
     [[ "$REPLY" =~ ^[Yy]$ ]] \
