@@ -1,6 +1,6 @@
 "*":
   "base16-syntax":
-    scheme: "Ocean"
+    scheme: "Atelier Dune"
   core:
     disabledPackages: [
       "power-mode"
@@ -8,12 +8,12 @@
     ]
     telemetryConsent: "no"
     themes: [
-      "spacegray-light-neue-ui"
-      "base16-syntax"
+      "spacegray-dark-ui"
+      "firewatch-syntax"
     ]
   editor:
     fontFamily: "Input Mono"
-    fontSize: 11
+    fontSize: 13
     lineHeight: 1.6
     tabType: "soft"
   "exception-reporting":
