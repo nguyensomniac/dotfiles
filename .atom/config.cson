@@ -1,15 +1,20 @@
 "*":
+  "activate-power-mode":
+    plugins:
+      playAudio: true
+      screenShake: true
   "base16-syntax":
     scheme: "Atelier Dune"
   core:
     disabledPackages: [
       "power-mode"
       "rainbow"
+      "activate-power-mode"
     ]
     telemetryConsent: "no"
     themes: [
       "spacegray-dark-ui"
-      "firewatch-syntax"
+      "ariake-dark-syntax"
     ]
   editor:
     fontFamily: "Input Mono"

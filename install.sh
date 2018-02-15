@@ -48,19 +48,30 @@ brew cask install "${cask_fonts[@]}"
 # mas signin $apple_id $apple_password
 
 atom_packages=(
-  aesthetic-ui
-  base16-syntax
-  file-icons
-  firewatch-syntax
-  pigments
-  power-mode
-  project-manager
-  redmond-syntax
-  spacegray-dark-syntax
-  spacegray-dark-ui
-  spacegray-light-syntax
-  spacegray-light-ui
-  vim-mode
+  activate-power-mode@2.6.0
+  aesthetic-ui@4.0.0
+  ariake-dark-syntax@0.1.3
+  base16-syntax@1.8.1
+  emmet@2.4.3
+  file-icons@2.1.16
+  firewatch-syntax@1.1.1
+  language-ejs@0.4.0
+  language-elixir@0.20.3
+  language-elm@1.5.0
+  lunar-syntax@0.1.3
+  markdown-writer@2.7.3
+  pigments@0.40.2
+  power-mode@0.1.3
+  project-manager@3.3.5
+  rainbow@1.1.0
+  react-es6-snippets@0.3.0
+  redmond-syntax@1.0.2
+  remote-edit@1.9.0
+  spacegray-dark-syntax@0.2.0
+  spacegray-dark-ui@0.13.0
+  spacegray-light-syntax@0.1.0
+  spacegray-light-ui@0.1.0
+  vim-mode@0.66.0
 )
 
 apm install "${atom_packages[@]}"
@@ -100,7 +111,9 @@ if [ $COUNT -eq $MAX_TRIES ]; then
 fi
 
 # install Antigen bundle manager for zsh
-echo "Installing Antigen to" $SCRIPTPATH
-mkdir $SCRIPTPATH/.antigen
-curl -L git.io/antigen > $SCRIPTPATH/.antigen/antigen.zsh
-ln -fs $SCRIPTPATH/.antigen ~/.antigen
+if [ ! -d ~/.antigen ]; then
+  echo "Installing Antigen to" $SCRIPTPATH
+  mkdir $SCRIPTPATH/.antigen
+  curl -L git.io/antigen > $SCRIPTPATH/.antigen/antigen.zsh
+  ln -fs $SCRIPTPATH/.antigen ~/.antigen
+fi
