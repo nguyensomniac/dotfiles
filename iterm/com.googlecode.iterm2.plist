@@ -37341,13 +37341,15 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 476 620 392 0 0 1680 1027 </string>
+	<string>2650 378 620 392 1680 -390 2560 1417 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 126 606 469 0 0 1680 1027 </string>
+	<string>2169 -176 606 469 1680 -390 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>467 349 918 452 0 0 1680 1027 </string>
+	<string>247 478 918 381 0 0 1680 1027 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>127 443 592 584 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>458 328 650 477 0 0 1680 1027 </string>
+	<string>243 134 1098 882 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_4E52300F-C6F0-4727-8926-AA497F0427FD</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_4E52300F-C6F0-4727-8926-AA497F0427FD_selection</key>
@@ -38041,6 +38043,8 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>0EF93225-DA8D-48D0-922D-C2CAD05B8C45</string>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>539556284.18887496</real>
 	<key>PassOnControlClick</key>
@@ -38091,19 +38095,23 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-02-05T23:51:42Z</date>
+	<date>2018-08-03T02:07:43Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1529086848</real>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

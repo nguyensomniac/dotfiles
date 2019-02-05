@@ -8,21 +8,25 @@
   core:
     disabledPackages: [
       "power-mode"
-      "rainbow"
       "activate-power-mode"
+      "rainbow"
+      "city-lights-icons"
     ]
+    excludeVcsIgnoredPaths: false
     telemetryConsent: "no"
     themes: [
-      "spacegray-dark-ui"
-      "ariake-dark-syntax"
+      "spacegray-eighties-ui"
+      "uber-base-dark-syntax"
     ]
   editor:
-    fontFamily: "Input Mono"
-    fontSize: 13
-    lineHeight: 1.6
-    tabType: "soft"
+    fontFamily: "Source Code pro"
+    lineHeight: 1.714
   "exception-reporting":
     userId: "67773382-ca53-afd5-032f-6892db9c21cc"
+  "markdown-preview":
+    useGitHubStyle: true
+  "prettier-atom":
+    formatOnSaveOptions: {}
   rainbow:
     cycleDuration: 30000
   "tree-view":

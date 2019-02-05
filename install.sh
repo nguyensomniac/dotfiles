@@ -111,9 +111,9 @@ if [ $COUNT -eq $MAX_TRIES ]; then
 fi
 
 # install Antigen bundle manager for zsh
-if [ ! -d ~/.antigen ]; then
-  echo "Installing Antigen to" $SCRIPTPATH
-  mkdir $SCRIPTPATH/.antigen
-  curl -L git.io/antigen > $SCRIPTPATH/.antigen/antigen.zsh
-  ln -fs $SCRIPTPATH/.antigen ~/.antigen
+if [ ! -d ~/.zgen ]; then
+  echo "Installing Zgen to" $SCRIPTPATH
+  mkdir $SCRIPTPATH/.zgen
+  git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen" 
+  ln -fs $SCRIPTPATH/.zgen ~/.zgen
 fi

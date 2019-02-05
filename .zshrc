@@ -1,32 +1,39 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-source $HOME/.antigen/antigen.zsh
+source "${HOME}/.zgen/zgen.zsh"
 
-antigen use oh-my-zsh
+
+# if the init script doesn't exist
+if ! zgen saved; then
+  zgen oh-my-zsh
+
+  # specify plugins here
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/heroku
+  zgen oh-my-zsh plugins/pip
+  zgen oh-my-zsh plugins/lein
+  zgen oh-my-zsh plugins/command-not-found
+  zgen oh-my-zsh plugins/osx
+
+  # Syntax highlighting bundle.
+  zgen load zsh-users/zsh-syntax-highlighting
+
+  # Load the theme.
+  zgen load geometry-zsh/geometry
+
+  # generate the init script from plugins above
+  zgen save
+fi
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Load the theme.
-antigen theme geometry-zsh/geometry
-
-# Tell Antigen that you're done.
-antigen apply
-
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/lily/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -53,6 +60,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias uaws="aws-credential-client -u $(whoami)@uber.com -t push -a us -i developer -r engineering"
+
 function git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
@@ -63,3 +72,8 @@ brew analytics off 2>&1 >/dev/null
 if [ -r ~/.zshrc_local ]; then
   source ~/.zshrc_local
 fi
+
+
+cn () { CN_PATH="$(/usr/local/lib/node_modules/@uber/change-node/change-node run $@)" && PATH="${CN_PATH:-$PATH}"; } # change-node t.uber.com/change-node
+
+source ~/.profile_corp #https://stack.uberinternal.com/questions/13218/what-is-uber-home-supposed-to-be
