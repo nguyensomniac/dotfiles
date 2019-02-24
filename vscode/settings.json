@@ -1,0 +1,42 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "go.buildOnSave": true,
+    "go.lintOnSave": true,
+    "go.vetOnSave": true,
+    "go.buildFlags": [],
+    "go.lintFlags": [],
+    "go.vetFlags": [],
+    "go.coverOnSave": false,
+    "go.useCodeSnippetsOnFunctionSuggest": false,
+    "go.formatOnSave": true,
+
+	"go.gopath": "~/gocode",
+    "go.formatTool": "goreturns",
+
+    "editor.tabSize": 2,
+    "editor.formatOnType": true,
+    "editor.scrollBeyondLastLine": false,
+
+    "files.exclude": {
+        "**/_build": true,
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.tmp": true,
+        "**/*.test": true,
+        "**/coverage.html": true,
+        "**/node_modules": true,
+        "go-build/.go": true,
+        "Godeps/_workspace": true,
+        "vendor": true
+    },
+    "vscode_custom_css.imports": ["file://~/dotfiles/vscode/custom.css"],
+    "vscode_custom_css.policy": true,
+    "files.trimTrailingWhitespace": true,
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "Apercu-Mono",
+    "workbench.colorTheme": "Palenight Theme",
+    "window.zoomLevel": 0,
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.minimap.enabled": false,
+}

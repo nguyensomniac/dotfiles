@@ -15,11 +15,11 @@
     excludeVcsIgnoredPaths: false
     telemetryConsent: "no"
     themes: [
-      "spacegray-eighties-ui"
-      "uber-base-dark-syntax"
+      "spacegray-dark-ui"
+      "firewatch-syntax"
     ]
   editor:
-    fontFamily: "Source Code pro"
+    fontFamily: "Source Code Pro"
     lineHeight: 1.714
   "exception-reporting":
     userId: "67773382-ca53-afd5-032f-6892db9c21cc"
