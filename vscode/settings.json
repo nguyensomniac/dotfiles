@@ -29,7 +29,7 @@
         "Godeps/_workspace": true,
         "vendor": true
     },
-    "vscode_custom_css.imports": ["file://~/dotfiles/vscode/custom.css"],
+    "vscode_custom_css.imports": ["file:///Users/lilyn/dotfiles/vscode/custom.css"],
     "vscode_custom_css.policy": true,
     "files.trimTrailingWhitespace": true,
     "files.autoSave": "onFocusChange",
