@@ -1,12 +1,12 @@
 SCRIPTPATH=$(cd "$(dirname "$1")"; pwd)/$(basename "$1")
 
 # Installs Homebrew. Ruby comes preinstalled on Macs
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Installs brew-cask
-brew tap caskroom/cask
-brew tap caskroom/versions
-brew tap caskroom/fonts
+brew tap homebrew/cask
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-fonts
 brew tap homebrew/science
 
 # Install brew packages
@@ -21,22 +21,26 @@ brew install "${brew_apps[@]}"
 # Install brew-cask packages
 
 cask_apps=(
-  atom
+  alfred
   dashlane
   firefox
   flux
+  figma
+  figmadaemon
   google-chrome
-  sketch
+  hyper
+  slack
   spotify
+  visual-studio-code	
 )
 
-brew cask install "${cask_apps[@]}"
+brew install --cask "${cask_apps[@]}"
 
 cask_fonts=(
   font-input
 )
 
-brew cask install "${cask_fonts[@]}"
+brew install --cask "${cask_fonts[@]}"
 
 # Install Mac app store apps - disabled until mas works better with tmux
 # mas_apps=(
@@ -47,36 +51,6 @@ brew cask install "${cask_fonts[@]}"
 # read -sp "Enter your password: " apple_password
 # mas signin $apple_id $apple_password
 
-atom_packages=(
-  activate-power-mode@2.6.0
-  aesthetic-ui@4.0.0
-  ariake-dark-syntax@0.1.3
-  base16-syntax@1.8.1
-  emmet@2.4.3
-  file-icons@2.1.16
-  firewatch-syntax@1.1.1
-  language-ejs@0.4.0
-  language-elixir@0.20.3
-  language-elm@1.5.0
-  lunar-syntax@0.1.3
-  markdown-writer@2.7.3
-  pigments@0.40.2
-  power-mode@0.1.3
-  project-manager@3.3.5
-  rainbow@1.1.0
-  react-es6-snippets@0.3.0
-  redmond-syntax@1.0.2
-  remote-edit@1.9.0
-  spacegray-dark-syntax@0.2.0
-  spacegray-dark-ui@0.13.0
-  spacegray-light-syntax@0.1.0
-  spacegray-light-ui@0.1.0
-  vim-mode@0.66.0
-)
-
-apm install "${atom_packages[@]}"
-
-# Install oh-my-zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 # Change default shell to zsh
@@ -109,6 +83,8 @@ done
 if [ $COUNT -eq $MAX_TRIES ]; then
   echo "Entered incorrect password too many times. Exiting."
 fi
+
+ln -fs $SCRIPTPATH/.zshrc ~/.zshrc
 
 # install Antigen bundle manager for zsh
 if [ ! -d ~/.zgen ]; then

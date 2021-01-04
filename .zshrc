@@ -60,7 +60,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias uaws="aws-credential-client -u $(whoami)@uber.com -t push -a us -i developer -r engineering"
 
 function git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
@@ -73,7 +72,3 @@ if [ -r ~/.zshrc_local ]; then
   source ~/.zshrc_local
 fi
 
-
-cn () { CN_PATH="$(/usr/local/lib/node_modules/@uber/change-node/change-node run $@)" && PATH="${CN_PATH:-$PATH}"; } # change-node t.uber.com/change-node
-
-source ~/.profile_corp #https://stack.uberinternal.com/questions/13218/what-is-uber-home-supposed-to-be
