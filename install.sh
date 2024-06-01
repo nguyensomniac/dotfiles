@@ -6,8 +6,6 @@ SCRIPTPATH=$(cd "$(dirname "$1")"; pwd)/$(basename "$1")
 # Installs brew-cask
 brew tap homebrew/cask
 brew tap homebrew/cask-versions
-brew tap homebrew/cask-fonts
-brew tap homebrew/science
 
 # Install brew packages
 
@@ -21,23 +19,16 @@ brew install "${brew_apps[@]}"
 # Install brew-cask packages
 
 cask_apps=(
-  alfred
-  dashlane
-  firefox
-  flux
+  arc
   figma
   figmadaemon
-  google-chrome
-  hyper
-  slack
   spotify
-  visual-studio-code	
 )
 
 brew install --cask "${cask_apps[@]}"
 
 cask_fonts=(
-  font-input
+  font-geist-mono
 )
 
 brew install --cask "${cask_fonts[@]}"
