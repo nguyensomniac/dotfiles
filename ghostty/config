@@ -1,0 +1,11 @@
+background = 111
+foreground = 999
+font-family = ABC Oracle Triple
+font-feature = ss18 on
+background-blur = true 
+background-opacity = 0.7
+adjust-cell-width = -8%
+macos-icon = glass 
+window-colorspace = display-p3
+window-padding-x = 16
+window-padding-y = 8

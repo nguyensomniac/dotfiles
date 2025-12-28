@@ -71,3 +71,7 @@ done
 
 # more symlinks
 ln -fs $(pwd)/.vim $HOME/.vim
+ln -fs $(pwd)/fish/config.fish $HOME/.config/fish
+ln -fs $(pwd)/ghostty/config $HOME/.config/ghostty/config
+ln -fs $(pwd)/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
+
