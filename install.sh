@@ -10,8 +10,8 @@ brew tap homebrew/cask-versions
 # Install brew packages
 
 brew_apps=(
-  tmux
-  zsh
+  fish
+  hellwal
 )
 
 brew install "${brew_apps[@]}"
@@ -19,37 +19,21 @@ brew install "${brew_apps[@]}"
 # Install brew-cask packages
 
 cask_apps=(
-  arc
+  visual-studio-code
   figma
   figmadaemon
+  ghostty
   spotify
 )
 
 brew install --cask "${cask_apps[@]}"
 
-cask_fonts=(
-  font-geist-mono
-)
-
-brew install --cask "${cask_fonts[@]}"
-
-# Install Mac app store apps - disabled until mas works better with tmux
-# mas_apps=(
-#   507257563 # Sip
-# )
-#
-# read -p "Enter your Apple ID: " apple_id
-# read -sp "Enter your password: " apple_password
-# mas signin $apple_id $apple_password
-
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-
-# Change default shell to zsh
-echo "Adding zsh to list of login shells."
+# Change default shell to fish
+echo "Adding fish to list of login shells."
 MAX_TRIES=4
 COUNT=0
 while [  $COUNT -lt $MAX_TRIES ]; do
-  sudo bash -c "echo $(which zsh) >> /etc/shells"
+  sudo bash -c "echo $(which fish) >> /etc/shells"
   if [ $? -eq 0 ]; then
     break
   fi
@@ -60,11 +44,11 @@ if [ $COUNT -eq $MAX_TRIES ]; then
   echo "Entered incorrect password too many times. Exiting."
 fi
 
-echo "Changing default shell to zsh."
+echo "Changing default shell to fish."
 MAX_TRIES=4
 COUNT=0
 while [  $COUNT -lt $MAX_TRIES ]; do
-  chsh -s $(which zsh)
+  chsh -s $(which fish)
   if [ $? -eq 0 ]; then
     break
   fi
@@ -75,12 +59,10 @@ if [ $COUNT -eq $MAX_TRIES ]; then
   echo "Entered incorrect password too many times. Exiting."
 fi
 
-ln -fs $SCRIPTPATH/.zshrc ~/.zshrc
+# Install fisher package manager for fish
+echo "Installing fisher package manager"
+fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 
-# install Antigen bundle manager for zsh
-if [ ! -d ~/.zgen ]; then
-  echo "Installing Zgen to" $SCRIPTPATH
-  mkdir $SCRIPTPATH/.zgen
-  git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen" 
-  ln -fs $SCRIPTPATH/.zgen ~/.zgen
-fi
+# Install all fisher packages from fish_plugins file
+echo "Installing fisher packages from fish_plugins"
+fish -c "fisher update"
