@@ -1,5 +1,9 @@
 set -gx PATH /opt/homebrew/bin /opt/homebrew/sbin $PATH
 set -gx PATH /usr/local/bin $PATH
+
+# Add user-maintained functions to function path
+set -gp fish_function_path ~/.config/fish/functions/user_maintained
+
 source ~/.cache/hellwal/variablesfish.fish
 sh ~/.cache/hellwal/terminal.sh
 
@@ -35,6 +39,11 @@ abbr grbs "git rebase --skip"
 abbr gst "git status"
 abbr gsta "git stash -u"
 abbr gstp "git stash pop"
+
+# Bash-like abbreviations
+abbr ... "cd ../.."
+abbr --add !! --position anywhere --function last_history_item
+abbr --add '$' --regex '\!\$$' --position anywhere --function last_history_arg
 
 starship init fish | source
 

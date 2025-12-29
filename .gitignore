@@ -1,2 +1,7 @@
 .antigen
 hellwal/cache
+hellwal/hellwal
+
+# Ignore Fisher plugins, except user-maintained functions
+fish/functions/*
+!fish/functions/user_maintained/

@@ -1,40 +1,17 @@
-# geometry
+# Dotfiles
 
-geometry is a minimal zsh prompt theme.
+Think about the perfect tee: _your_ perfect tee. Is it cotton, synthetic, or somewhere in between? How does it hug your hips? Does it make you feel radiant, powerful, beautiful? Or is it simply a shield that makes the bad days less hard, with a bit of fraying on the ends that you pull when you get anxious?
 
-![geometry](screenshots/geometry.png)
+This repository is nearly a decade old, and like that perfect tee, has followed me throughout every stage of life since. In that time I made it into engineering school, (miraculously) graduated engineering school, bounced between the SF→LA→NYC trifecta, and flamed out of professional software engineering entirely in favor of pursuing product & design. But the computer has stayed a constant. Try as I might, I've never been able to quit tinkering. So here we are.
 
-I started chopping away at [Avit](https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/avit.zsh-theme) until I ended up with something minimal and inspired on [Pure](https://github.com/sindresorhus/pure).
+One final thing: I'm style over substance, and my setup is designed to be _evocative_. But that's my perfect tee: a 1 of 1 designed for me.
 
-What it does:
+## My setup
 
-- display current git branch
-- display colored time since last commit
-- display state (clean/dirty) of the repo
-- display arrows indicating if you need to pull, push or if you are mid-rebase
-- set the terminal title to current command and directory
-- makes you the coolest hacker in the whole Starbucks
+- [fish](https://fishshell.com/) -  daily driver shell
+- [ghostty](https://ghostty.org/) - terminal emulator
+- [starship](https://starship.rs/) - customizable terminal prompt (RIP [geometry](https://github.com/geometry-zsh/geometry))
+- [hellwal](https://github.com/danihek/hellwal/) - simple terminal theming
+- Vim / Visual Studio Code - for code & text editing
+- [Oracle Triple](https://abcdinamo.com/typefaces/oracle) - terminal font (spicy, comes separately)
 
-Much like [Pure](https://github.com/sindresorhus/pure), geometry adds a different marker
-if the last command result is different from `0`. It also sets the title to
-`[command @] directory`. Check the title and marker here:
-
-![title_marker](screenshots/title_marker.png)
-
-## Installing
-
-### antigen
-
-Just add `antigen bundle frmendes/geometry` to your `.zshrc`.
-
-### oh-my-zsh
-
-Move `geometry.zsh` to `$HOME/.oh-my-zsh/custom/themes/geometry.zsh-theme` and
-set `ZSH_THEME="geometry"` in your `.zshrc`.
-
-### Dependencies
-
-The symbol for rebasing comes from a [Powerline patched font](https://github.com/powerline/fonts). If you want to use it, you're going to need to install one from the font repo. The one used in the screenshots is Roboto Mono. You can also try to [patch it yourself](https://github.com/powerline/fontpatcher).
-
-Alternatively, change the symbol by setting the `GIT_REBASE` variable, in
-`geometry.zsh` to a different value.
