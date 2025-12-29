@@ -77,3 +77,4 @@ ln -fs $(pwd)/fish/functions $HOME/.config/fish/functions
 ln -fs $(pwd)/ghostty/config $HOME/.config/ghostty/config
 ln -fs $(pwd)/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
 ln -fs $(pwd)/hellwal $HOME/.cache/hellwal
+ln -fs $(pwd)/starship/starship.toml $HOME/.config/starship.toml
