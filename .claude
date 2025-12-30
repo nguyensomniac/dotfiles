@@ -1,0 +1,10 @@
+# Claude Instructions for dotfiles repo
+
+## Fish Shell Functions
+
+User-maintained fish functions should be placed in:
+- `fish/functions/user_maintained/`
+
+This directory is added to the fish function path in `fish/config.fish` (line 5).
+
+Do not place user-created functions directly in `fish/functions/` - use the `user_maintained` subdirectory instead.
