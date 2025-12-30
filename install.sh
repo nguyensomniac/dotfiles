@@ -12,7 +12,6 @@ brew tap homebrew/cask-versions
 brew_apps=(
   fish
   hellwal
-  nowplaying-cli
   startship
 )
 
