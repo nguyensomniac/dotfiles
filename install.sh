@@ -10,9 +10,10 @@ brew tap homebrew/cask-versions
 # Install brew packages
 
 brew_apps=(
+  fastfetch
   fish
   hellwal
-  startship
+  starship
 )
 
 brew install "${brew_apps[@]}"
@@ -24,6 +25,7 @@ cask_apps=(
   figma
   figmadaemon
   ghostty
+  thebrowsercompany-dia
   spotify
 )
 

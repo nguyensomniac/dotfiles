@@ -1,1 +1,1 @@
-/Users/lily/programming/dotfiles/.vim
+/Users/lily/dotfiles/.vim
