@@ -10,6 +10,7 @@ brew tap homebrew/cask-versions
 # Install brew packages
 
 brew_apps=(
+  gh
   fastfetch
   fish
   hellwal
