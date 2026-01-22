@@ -22,12 +22,13 @@ brew install "${brew_apps[@]}"
 # Install brew-cask packages
 
 cask_apps=(
-  visual-studio-code
+  claude-code
   figma
   figmadaemon
   ghostty
   thebrowsercompany-dia
   spotify
+  visual-studio-code
 )
 
 brew install --cask "${cask_apps[@]}"

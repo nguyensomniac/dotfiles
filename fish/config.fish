@@ -1,6 +1,9 @@
 set -gx PATH /opt/homebrew/bin /opt/homebrew/sbin $PATH
 set -gx PATH /usr/local/bin $PATH
 
+# Load Node LTS via nvm.fish
+nvm use lts
+
 # Add user-maintained functions to function path
 set -gp fish_function_path ~/.config/fish/functions/user_maintained
 
