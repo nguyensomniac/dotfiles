@@ -15,3 +15,23 @@ One final thing: I'm style over substance, and my setup is designed to be _evoca
 - Vim / Visual Studio Code - for code & text editing
 - [Oracle Triple](https://abcdinamo.com/typefaces/oracle) - terminal font (spicy, comes separately)
 
+## Usage
+
+Managed with [chezmoi](https://www.chezmoi.io/).
+
+```bash
+# Fresh machine setup
+chezmoi init --apply nguyensomniac/dotfiles
+
+# Sync changes on another machine
+chezmoi update
+
+# Edit a dotfile
+chezmoi edit ~/.config/ghostty/config
+
+# Add a new dotfile
+chezmoi add ~/.config/new-tool/config
+
+# Apply changes locally
+chezmoi apply
+```
