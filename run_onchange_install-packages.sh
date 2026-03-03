@@ -49,3 +49,7 @@ fi
 # Install all fisher packages from fish_plugins file
 echo "Installing fisher packages from fish_plugins"
 fish -c "fisher update"
+
+# Install Vercel agent skills globally
+echo "Installing Vercel agent skills"
+npx skills add vercel-labs/agent-skills --yes --global
