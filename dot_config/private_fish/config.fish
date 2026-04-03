@@ -1,8 +1,10 @@
 set -gx PATH /opt/homebrew/bin /opt/homebrew/sbin $PATH
 set -gx PATH /usr/local/bin $PATH
 
-# Load Node LTS via nvm.fish
-nvm use lts
+# Load Node LTS via nvm.fish (only if node not already available)
+if not type -q node
+    nvm use lts >/dev/null 2>&1
+end
 
 # Add user-maintained functions to function path
 set -gp fish_function_path ~/.config/fish/functions/user_maintained
@@ -42,6 +44,18 @@ abbr grbs "git rebase --skip"
 abbr gst "git status"
 abbr gsta "git stash -u"
 abbr gstp "git stash pop"
+
+# Implicit cd for bare directory names
+function fish_command_not_found
+    if test -d $argv[1]
+        cd $argv[1]
+    else
+        __fish_default_command_not_found_handler $argv
+    end
+end
+
+# General abbreviations
+abbr l "ls"
 
 # Bash-like abbreviations
 abbr ... "cd ../.."
