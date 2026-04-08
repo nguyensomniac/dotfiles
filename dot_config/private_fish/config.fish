@@ -30,6 +30,7 @@ abbr gco "git checkout"
 abbr gcp "git cherry-pick"
 abbr gd "git diff"
 abbr gds "git diff --staged"
+abbr ggpull "git pull"
 abbr ggpush "git push -u origin (git rev-parse --abbrev-ref HEAD)"
 abbr gl "git pull --rebase"
 abbr gm "git merge"
@@ -56,6 +57,7 @@ end
 
 # General abbreviations
 abbr l "ls"
+abbr cdsp "claude --dangerously-skip-permissions"
 
 # Bash-like abbreviations
 abbr ... "cd ../.."
