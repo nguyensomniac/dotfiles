@@ -3,7 +3,7 @@ set -gx PATH /usr/local/bin $PATH
 
 # Load Node LTS via nvm.fish (only if node not already available)
 if not type -q node
-    nvm use lts >/dev/null 2>&1
+    nvm use --silent lts >/dev/null 2>&1
 end
 
 # Add user-maintained functions to function path
