@@ -1,20 +1,5 @@
 {
   "model": "opus",
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"{{ .chezmoi.homeDir }}/.claude/hooks/gsd-check-update.js\""
-          }
-        ]
-      }
-    ]
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "node \"{{ .chezmoi.homeDir }}/.claude/hooks/gsd-statusline.js\""
-  },
-  "fastMode": true
+  "fastMode": true,
+  "skipDangerousModePermissionPrompt": true
 }
