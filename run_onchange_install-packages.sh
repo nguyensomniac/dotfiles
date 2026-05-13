@@ -22,8 +22,10 @@ cask_apps=(
   figma
   figmadaemon
   ghostty
-  thebrowsercompany-dia
+  raycast
+  slack
   spotify
+  thebrowsercompany-dia
   visual-studio-code
 )
 
