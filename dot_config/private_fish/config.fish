@@ -57,7 +57,7 @@ end
 
 # General abbreviations
 abbr l "ls"
-abbr cdsp "claude --dangerously-skip-permissions"
+abbr c "claude --dangerously-skip-permissions"
 
 # Bash-like abbreviations
 abbr ... "cd ../.."
