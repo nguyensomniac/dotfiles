@@ -25,6 +25,7 @@ cask_apps=(
   raycast
   slack
   spotify
+  tailscale-app
   thebrowsercompany-dia
   visual-studio-code
 )
