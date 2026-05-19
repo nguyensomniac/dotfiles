@@ -5,32 +5,8 @@ if ! command -v brew &>/dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-# Install brew packages
-brew_apps=(
-  gh
-  fastfetch
-  fish
-  hellwal
-  starship
-)
-
-brew install "${brew_apps[@]}"
-
-# Install brew-cask packages
-cask_apps=(
-  claude-code
-  figma
-  figmadaemon
-  ghostty
-  raycast
-  slack
-  spotify
-  tailscale-app
-  thebrowsercompany-dia
-  visual-studio-code
-)
-
-brew install --cask "${cask_apps[@]}"
+# Install brew packages from Brewfile
+brew bundle --file="{{ .chezmoi.sourceDir }}/Brewfile"
 
 # Set fish as default shell if not already
 if ! grep -q "$(which fish)" /etc/shells 2>/dev/null; then
