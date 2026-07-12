@@ -1,0 +1,11 @@
+[packs]
+enabled = [
+  "containers.docker",
+  "database.mysql",
+  "database.postgresql",
+  "database.sqlite",
+]
+
+[heredoc]
+enabled = true
+timeout_ms = 50

@@ -1,7 +1,4 @@
 {
-  "model": "opus",
-  "fastMode": true,
-  "skipDangerousModePermissionPrompt": true,
   "hooks": {
     "PreToolUse": [
       {
@@ -9,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "{{ .chezmoi.homeDir }}/.local/bin/dcg"
+            "command": "{{ .chezmoi.homeDir }}/.local/bin/dcg-codex-hook"
           }
         ]
       }

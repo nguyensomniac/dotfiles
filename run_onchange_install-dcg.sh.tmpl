@@ -1,0 +1,47 @@
+#!/bin/bash
+set -euo pipefail
+
+version="v0.6.5"
+dest="$HOME/.local/bin"
+repo="Dicklesworthstone/destructive_command_guard"
+
+case "$(uname -s)-$(uname -m)" in
+  Darwin-arm64|Darwin-aarch64)
+    target="aarch64-apple-darwin"
+    sha256="272b5b1f3e4a3adc3b86c067f5c020aa26caa4b713664f67fb2ad8e104111adc"
+    ;;
+  Darwin-x86_64)
+    target="x86_64-apple-darwin"
+    sha256="07b28b62efcf2ad74c30c8c20bf3f550f9e0b2a9aa927f3003c7eae1b45d42c6"
+    ;;
+  *)
+    echo "dcg install skipped: unsupported platform $(uname -s)-$(uname -m)"
+    exit 0
+    ;;
+esac
+
+if [ -x "$dest/dcg" ] && "$dest/dcg" --version 2>/dev/null | grep -Eq "(^| )${version#v}$"; then
+  echo "dcg ${version} already installed"
+  exit 0
+fi
+
+archive="dcg-${target}.tar.xz"
+url="https://github.com/${repo}/releases/download/${version}/${archive}"
+tmpdir="$(mktemp -d)"
+trap 'rm -rf "$tmpdir"' EXIT
+
+mkdir -p "$dest"
+
+echo "Installing dcg ${version} for ${target}"
+curl -fsSL "$url" -o "$tmpdir/$archive"
+printf '%s  %s\n' "$sha256" "$tmpdir/$archive" | shasum -a 256 -c -
+tar -xJf "$tmpdir/$archive" -C "$tmpdir"
+
+binary="$(find "$tmpdir" -type f -name dcg | head -n 1)"
+if [ -z "$binary" ]; then
+  echo "dcg binary missing from ${archive}" >&2
+  exit 1
+fi
+
+install -m 0755 "$binary" "$dest/dcg"
+"$dest/dcg" --version
