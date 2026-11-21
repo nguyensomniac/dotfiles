@@ -1,4 +1,4 @@
 .hyper.js
 .vim/
 dot_agents/skills/*
-!dot_agents/skills/lil-ux/
+!dot_agents/skills/symlink_lil-ux.tmpl
