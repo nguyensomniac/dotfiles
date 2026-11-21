@@ -1,3 +1,4 @@
 .hyper.js
 .vim/
-dot_agents/skills/
+dot_agents/skills/*
+!dot_agents/skills/lil-ux/
